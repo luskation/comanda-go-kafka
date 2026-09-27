@@ -1,0 +1,15 @@
+kafka:
+  brokers:
+    - kafka-1:9092
+    - kafka-2:9092
+    - kafka-3:9092
+
+exporter:
+  namespace: kminion
+
+minion:
+  consumer-groups:
+    enabled: true
+  topics:
+    enabled: true
+    exclude-regexp: ["^_.*"]
