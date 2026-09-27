@@ -6,10 +6,13 @@ kafka:
 
 exporter:
   namespace: kminion
+  port: 8080
 
 minion:
-  consumer-groups:
+  consumerGroups:
     enabled: true
+    scrapeMode: adminApi
+    granularity: partition
   topics:
-    enabled: true
-    exclude-regexp: ["^_.*"]
+    granularity: partition
+    ignoredTopics: ["^_.*"]
